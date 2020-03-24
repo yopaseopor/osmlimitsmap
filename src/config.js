@@ -189,7 +189,7 @@ var config = {
 			title: 'Lavabo',
 			query: '(node[toilets=yes]({{bbox}});node(w);way[toilets=yes]({{bbox}});relation[toilets=yes]({{bbox}}););out meta;',
 			iconSrc: imgSrc + 'icones/toilets.svg',
-iconStyle: 'background-color:#0000FF',
+iconStyle: 'background-color:#FFFFFF',
 			style: function () {
 				var fill = new ol.style.Fill({
 					color: 'green'
