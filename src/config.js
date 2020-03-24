@@ -15,7 +15,7 @@ var config = {
 	i18n: {
 		layersLabel: 'Capas',
 		editWith: 'Editar con:',
-		openWith: 'ABrir con:',
+		openWith: 'Abrir con:',
 		checkTools: 'Validación:',
 		nodeLabel: 'Nodo:',
 		noNodesFound: 'No se encontraron resultados en este área.',
@@ -818,6 +818,7 @@ var config = {
 			query: '(node({{bbox}});rel(bn)->.foo;way(bn);node(w)->.foo;rel(bw););out;',
 			style: function (feature) {
 				var name = feature.get('name') || '';
+				var lanes = feature.get('lanes') || '';
 				var styles = {
 					'amenity': {
 						'parking': new ol.style.Style({
@@ -863,8 +864,9 @@ var config = {
 							}),
 							text: new ol.style.Text({
 								text: name
+							}),
+							text: new ol.style.Text({
 								text: lanes
-								text: lanes:forward
 							}
 						})
 					},
