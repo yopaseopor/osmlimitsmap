@@ -13,13 +13,13 @@ var config = {
 		units: 'metric'
 	},
 	i18n: {
-		layersLabel: 'Layers',
-		editWith: 'Editar amb:',
-		openWith: 'Obre amb:',
-		checkTools: 'Validació:',
-		nodeLabel: 'Node:',
-		noNodesFound: 'No s\'ha trobat cap resultat en aquesta àrea.',
-		wayLabel: 'Way:'
+		layersLabel: 'Capas',
+		editWith: 'Editar con:',
+		openWith: 'ABrir con:',
+		checkTools: 'Validación:',
+		nodeLabel: 'Nodo:',
+		noNodesFound: 'No se encontraron resultados en este área.',
+		wayLabel: 'Vía:'
 	},
 	overpassApi: function(){
 		// https://overpass-turbo.eu/
@@ -863,7 +863,10 @@ var config = {
 							}),
 							text: new ol.style.Text({
 								text: name
-							})
+							}),
+							text: new ol.style.Text({
+								text: lanes
+							}
 						})
 					},
 					'landuse': {
