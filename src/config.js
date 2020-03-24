@@ -166,7 +166,7 @@ var config = {
 			iconStyle: 'background-color:#0000FF',
 			style: function () {
 				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,255,0.4)'
+					color: 'green'
 				});
 				var stroke = new ol.style.Stroke({
 					color: 'green',
