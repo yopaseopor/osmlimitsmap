@@ -864,9 +864,6 @@ var config = {
 							}),
 							text: new ol.style.Text({
 								text: name
-							}),
-							text: new ol.style.Text({
-								text: lanes
 							}
 						})
 					},
