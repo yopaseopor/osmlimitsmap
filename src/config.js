@@ -133,14 +133,14 @@ var config = {
 	overlays: [
 		// Overlay: Iniciatives
 		{
-			group: 'Services',
-			title: 'Cobertura 112',
-			query: 'node[emergency=access_point]({{bbox}});out skel;',
-			iconSrc: imgSrc + 'icones/pal_cobertura.png',
+			group: 'Servicios',
+			title: 'Áea de servicio',
+			query: '(node[highway=services]({{bbox}});node(w);way[highway=services]({{bbox}});node(w);relation[highway=services]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/ES_S127.png',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
-						src: imgSrc + 'icones/pal_cobertura.png'
+						src: imgSrc + 'icones/ES_S127.png'
 					})
 				});
 				return style;
@@ -863,7 +863,7 @@ var config = {
 							}),
 							text: new ol.style.Text({
 								text: name
-							}
+							})
 						})
 					},
 					'landuse': {
