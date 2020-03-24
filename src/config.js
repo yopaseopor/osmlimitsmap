@@ -212,14 +212,26 @@ iconStyle: 'background-color:#FFFFFF',
 		},
 		{
 			group: 'Tipo',
-			title: 'Desfibril·lador',
-			query: 'node[emergency=defibrillator]({{bbox}});out skel;',
-			iconSrc: imgSrc + 'icones/aed.png',
+			title: 'Ducha',
+			query: '(node[shower=yes]({{bbox}});node(w);way[shower=yes]({{bbox}});node(w);relation[shower=yes]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/shower.svg',
+iconStyle: 'background-color:#FFFFFF',
 			style: function () {
+				var fill = new ol.style.Fill({
+					color: '#6a5acd'
+				});
+				var stroke = new ol.style.Stroke({
+					color: '#6a5acd',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: imgSrc + 'icones/aed.png'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}
