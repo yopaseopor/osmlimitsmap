@@ -186,13 +186,13 @@ var config = {
 		},
 		{
 			group: 'Tipo',
-			title: 'Desfibril·lador',
-			query: 'node[emergency=defibrillator]({{bbox}});out skel;',
-			iconSrc: imgSrc + 'icones/aed.png',
+			title: 'Lavabo',
+			query: 'node[toilets=yes]({{bbox}});out skel;',
+			iconSrc: imgSrc + 'icones/toilets.svg',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
-						src: imgSrc + 'icones/aed.png'
+						src: imgSrc + 'icones/toilets.svg'
 					})
 				});
 				return style;
