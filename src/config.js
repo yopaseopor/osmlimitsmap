@@ -166,7 +166,7 @@ var config = {
 			iconStyle: 'background-color:#0000FF',
 			style: function () {
 				var fill = new ol.style.Fill({
-					color: '#C70039'
+					color: 'rgba(255,0,0,0.4)'
 				});
 				var stroke = new ol.style.Stroke({
 					color: '#C70039',
@@ -192,7 +192,7 @@ var config = {
 iconStyle: 'background-color:#FFFFFF',
 			style: function () {
 				var fill = new ol.style.Fill({
-					color: '#17FF00'
+					color: 'rgba(0,255,0,0.4)'
 				});
 				var stroke = new ol.style.Stroke({
 					color: '#17FF00',
@@ -218,7 +218,7 @@ iconStyle: 'background-color:#FFFFFF',
 iconStyle: 'background-color:#FFFFFF',
 			style: function () {
 				var fill = new ol.style.Fill({
-					color: '#6a5acd'
+					color: 'rgba(204, 0, 255,0.4)'
 				});
 				var stroke = new ol.style.Stroke({
 					color: '#6a5acd',
