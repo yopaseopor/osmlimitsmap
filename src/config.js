@@ -818,7 +818,6 @@ var config = {
 			query: '(node({{bbox}});rel(bn)->.foo;way(bn);node(w)->.foo;rel(bw););out;',
 			style: function (feature) {
 				var name = feature.get('name') || '';
-				var lanes = feature.get('lanes') || '';
 				var styles = {
 					'amenity': {
 						'parking': new ol.style.Style({
