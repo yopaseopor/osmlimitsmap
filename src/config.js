@@ -133,7 +133,7 @@ var config = {
 	overlays: [
 		// Overlay: Iniciatives
 		{
-			group: 'Servicios',
+			group: 'Tipo',
 			title: 'Área de servicio',
 			query: '(node[highway=services]({{bbox}});node(w);way[highway=services]({{bbox}});node(w);relation[highway=services]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/ES_S127.png',
@@ -159,7 +159,47 @@ var config = {
 			}
 		},
 		{
-			group: 'Iniciatives',
+			group: 'Tipo',
+			title: 'Área de descanso',
+			query: '(node[highway=rest_area]({{bbox}});node(w);way[highway=rest_area]({{bbox}});node(w);relation[highway=rest_area]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/ES_S123.png',
+			iconStyle: 'background-color:#0000FF',
+			style: function () {
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,255,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'green',
+					width: 1.25
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Tipo',
+			title: 'Desfibril·lador',
+			query: 'node[emergency=defibrillator]({{bbox}});out skel;',
+			iconSrc: imgSrc + 'icones/aed.png',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						src: imgSrc + 'icones/aed.png'
+					})
+				});
+				return style;
+			}
+		},
+		{
+			group: 'Tipo',
 			title: 'Desfibril·lador',
 			query: 'node[emergency=defibrillator]({{bbox}});out skel;',
 			iconSrc: imgSrc + 'icones/aed.png',
