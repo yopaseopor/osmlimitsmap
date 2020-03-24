@@ -133,7 +133,7 @@ var config = {
 	overlays: [
 		// Overlay: Iniciatives
 		{
-			group: 'Services',
+			group: 'Iniciatives',
 			title: 'Cobertura 112',
 			query: 'node[emergency=access_point]({{bbox}});out skel;',
 			iconSrc: imgSrc + 'icones/pal_cobertura.png',
