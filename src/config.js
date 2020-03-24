@@ -134,14 +134,26 @@ var config = {
 		// Overlay: Iniciatives
 		{
 			group: 'Servicios',
-			title: 'Áea de servicio',
+			title: 'Área de servicio',
 			query: '(node[highway=services]({{bbox}});node(w);way[highway=services]({{bbox}});node(w);relation[highway=services]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/ES_S127.png',
+			iconStyle: 'background-color:#0000FF',
 			style: function () {
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,255,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: '#0000FF',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						src: imgSrc + 'icones/ES_S127.png'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}
