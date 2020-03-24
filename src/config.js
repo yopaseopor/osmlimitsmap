@@ -187,13 +187,13 @@ var config = {
 		{
 			group: 'Tipo',
 			title: 'Lavabo',
-			query: '(node[toilets=yes]({{bbox}});node(w);way[toilets=yes]({{bbox}});node(w);relation[toilets=yes]({{bbox}});node(w););out meta;',
+			query: '(node[toilets=yes]({{bbox}});node(w);way[toilets=yes]({{bbox}});relation[toilets=yes]({{bbox}}););out meta;',
 			iconSrc: imgSrc + 'icones/toilets.svg',
 			style: function () {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
-						src: imgSrc + 'icones/toilets.svg',
-						width: 100
+						scale: 0.04,
+						src: imgSrc + 'icones/toilets.svg'
 					})
 				});
 				return style;
