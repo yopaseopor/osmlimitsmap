@@ -166,10 +166,10 @@ var config = {
 			iconStyle: 'background-color:#0000FF',
 			style: function () {
 				var fill = new ol.style.Fill({
-					color: 'green'
+					color: 'red'
 				});
 				var stroke = new ol.style.Stroke({
-					color: 'green',
+					color: 'red',
 					width: 1.25
 				});
 				var style = new ol.style.Style({
@@ -189,12 +189,23 @@ var config = {
 			title: 'Lavabo',
 			query: '(node[toilets=yes]({{bbox}});node(w);way[toilets=yes]({{bbox}});relation[toilets=yes]({{bbox}}););out meta;',
 			iconSrc: imgSrc + 'icones/toilets.svg',
+iconStyle: 'background-color:#0000FF',
 			style: function () {
+				var fill = new ol.style.Fill({
+					color: 'green'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'green',
+					width: 1.25
+				});
 				var style = new ol.style.Style({
-					image: new ol.style.Icon({
-						scale: 0.04,
-						src: imgSrc + 'icones/toilets.svg'
-					})
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+					fill: fill,
+					stroke: stroke
 				});
 				return style;
 			}
