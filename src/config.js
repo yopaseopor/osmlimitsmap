@@ -187,7 +187,7 @@ var config = {
 		{
 			group: 'Tipo',
 			title: 'Lavabo',
-			query: '(node[toilets=yes]({{bbox}});node(w);way[toilets=yes]({{bbox}});relation[toilets=yes]({{bbox}}););out meta;',
+			query: '(node[toilets=yes]({{bbox}});node(w);way[toilets=yes]({{bbox}});node(w);relation[toilets=yes]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/toilets.svg',
 iconStyle: 'background-color:#FFFFFF',
 			style: function () {
