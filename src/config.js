@@ -193,6 +193,7 @@ var config = {
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
 						src: imgSrc + 'icones/toilets.svg'
+						width: 100
 					})
 				});
 				return style;
