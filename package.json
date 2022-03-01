@@ -1,7 +1,7 @@
 {
-  "name": "osmcatmap2",
-  "version": "2.0.0",
-  "description": "OpenStreetMap Catalunya Ripollx",
+  "name": "osmparkingmap",
+  "version": "1.0.0",
+  "description": "OpenStreetMap Parking Map",
   "main": "index.html",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "url": "https://github.com/Ripollx"
   },
   "keywords": [
-    "Catalunya",
+    "Parking",
     "openlayers",
     "OpenStreetMap"
   ]

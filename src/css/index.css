@@ -63,6 +63,11 @@ a:hover {
 	right: 8px;
 }
 
+.osmcat-sharebutton {
+	bottom: 30px;
+	right: 44px;
+}
+
 .osmcat-menu{
 	display: flex;
 	flex-wrap: wrap;
@@ -92,10 +97,6 @@ a:hover {
 .osmcat-content > div {
 	margin-top: 3px;
 }
-.osmcat-content > div:hover {
-	cursor: pointer;
-	background-color: rgba(36,0,136,.3);
-}
 .osmcat-content > div.active {
 	background-color: rgba(0,60,136,.3);
 }
@@ -103,6 +104,31 @@ a:hover {
 .osmcat-map-pin {
 	min-width: 10px;
 	text-align: center;
+}
+
+.osmcat-loading {
+	bottom: 50%;
+	display: none;
+	right: 50%;
+	z-index: 9999;
+}
+
+.ol-mouse-position {
+	top: 36px;
+}
+
+.ol-rotate {
+	right:5.5em;
+}
+
+.osmcat-rotateleft {
+	top: .5em;
+	right: .5em;
+}
+
+.osmcat-rotateright {
+	top: .5em;
+	right: 3em;
 }
 
 .popup {
@@ -163,5 +189,9 @@ a:hover {
 	.osmcat-layer {
 		height: auto;
 		width: 100%;
+	}
+	.osmcat-content > div:hover {
+		cursor: pointer;
+		background-color: rgba(36,0,136,.3);
 	}
 }

@@ -1,20 +1,50 @@
-# Comunitat OpenStreetMap Catalunya
+# Mapa de la Comunitat Catalana : Motiu
+OSM CAT MAP  neix de l'adaptació del mapa de la comunitat catalana a mostrar qualsevol tipus d'informació temàtica.
+Aprofitant la base de dades d'Openstreetmap es mostren les campanyes d'etiquetatge de la comunitat catalana en els darrers temps.
 
-Desenvolupament basat en l'idea de `https://osm-catalan.github.io/osmcatmap/`.
-Desenvolupat amb la llibreria de [OpenLayers](https://openlayers.org/) i amb la API de [Overpass Turbo](https://wiki.openstreetmap.org/wiki/Overpass_turbo) disponible en la web de [Overpass Turbo](https://overpass-turbo.eu/).
+# 0-La Base de dades: Openstreetmap
+OSM (Openstreetmap) no és un mapa, és una base de dades de punts i línies geolocalitzats, que entre d'altres coses es pot aprofitar per fer mapes (renderitzacions). Però també es poden aprofitar les dades (en aquest cas, contenidors) .Tot plegat es fa amb claus, valors i relacions en aquests punts i línies.
 
-## Utilitzar
+# 1-Mapa
 
-Desde la versió 2 ja no es requereix node per utilitzar la llibreria OpenLayers modificada.
+-Mapa basat en [Bicycle tags map](https://wiki.openstreetmap.org/wiki/Bicycle_tags_map)
 
-Directament es pot modificar la página editant els arxius corresponents:
-* index.html conté l'esquelet de la página.
-* index.js conté l'orquestador per utilitzar OpenLayers (només es requereix modificar per afegir noves funcionalitats).
-* config.js conté la definició de les capes, idioma i característiques que es volen mostrar.
+-Amb modificacions de [Ramiro Balado](https://github.com/Qjammer)
 
-## Exemple
+-Versió nova Openlayers feta per [Ripollx](https://github.com/Ripollx)
 
-Es pot executar el codi actual a [GitHub Pages](https://ripollx.github.io/osmcatmap2/)
+-Possibilitat d'afegir JSONs feta per [Hugoren Martinako ](https://github.com/Crashillo)
 
-## Versions anteriors
-S'ha conservat la versió anterior [Release v1.0.0](https://github.com/Ripollx/osmcatmap2/tree/v1.0.0).
+-Consultes complexes afegides per [Ismael Luceno](https://github.com/ismaell)
+
+-Idees addicionals per [yopaseopor](https://github.com/yopaseopor)
+
+El mapa ens mostra tot de campanyes que la comunitat catalana ha anat complint al llarg dels darrers anys amb l'objectiu de millorar el mapa.
+
+
+*	Accessibilitat (Wheelchair)
+*	Voreres (adaptació)
+*	Encreuaments
+*	Vies
+*	Àrees
+*	Altres
+*	Vorades
+*	Zones d'aparcament
+*	Mobilitat
+*	COVID19
+*	Iniciatives
+*	Reciclatge
+*	Accessibilitat (Altres)
+*	Dades possibles
+
+Directament es pot modificar la pàgina editant els arxius corresponents:
+
+*    index.html conté l'esquelet de la pàgina.
+*    index.js conté l'orquestador per utilitzar OpenLayers (només es requereix modificar per afegir noves funcionalitats).
+*    config.js conté la definició de les capes, idioma i característiques que es volen mostrar.
+
+# [Exemple del mapa funcionant](https://osm-catalan.github.io/osmcatmap)
+
+# Agraïments
+
+A la [Comunitat Catalana d'Openstreetmap](https://t.me/osmcat) i a [OSM España](https://t.me/osmes) per permetre aquests mapes, així com als desenvolupadors que hi han col·laborat.
