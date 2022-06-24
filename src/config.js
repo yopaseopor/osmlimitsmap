@@ -839,7 +839,7 @@ var config = {
 								offsetY : 0,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
-						})
+						}),
 					}));
 				}
 
@@ -888,7 +888,7 @@ var config = {
 								offsetY : 0,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
-						})
+						}),
 					}));
 				}
 
