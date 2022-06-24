@@ -919,7 +919,7 @@ var config = {
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							offsetX : 0,
-								offsetY : 10,
+								offsetY : 100,
 							scale:0.06
 						}),
 						text: new ol.style.Text({
