@@ -833,13 +833,8 @@ var config = {
 							scale:0.04
 						}),
 						text: new ol.style.Text({
-								text: maxspeed,
-								font: 'small-caps bold 12px/1 sans-serif',
-								offsetX : 0,
-								offsetY : 0,
-								fill: new ol.style.Fill({
-                            color: 'rgba(0,0,0,1)'
-						}),
+							text: maxspeed
+						})
 					}));
 				}
 
@@ -882,13 +877,8 @@ var config = {
 							scale:0.04
 						}),
 						text: new ol.style.Text({
-								text: maxspeed,
-								font: 'small-caps bold 12px/1 sans-serif',
-								offsetX : 0,
-								offsetY : 0,
-								fill: new ol.style.Fill({
-                            color: 'rgba(0,0,0,1)'
-						}),
+							text: maxspeed
+						})
 					}));
 				}
 
