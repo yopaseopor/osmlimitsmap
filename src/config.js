@@ -918,7 +918,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							offset:'30,40',
+							offset:(30,40),
 							scale:0.06
 						}),
 						text: new ol.style.Text({
