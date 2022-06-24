@@ -915,7 +915,7 @@ var config = {
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(10.5)), // show the image in the middle of the segment
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(1.1)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							offset: [30, 40],
