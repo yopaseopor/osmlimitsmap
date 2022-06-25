@@ -785,7 +785,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxheight_empty.svg',
+							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
@@ -801,7 +801,7 @@ var config = {
 			group: 'Mobilitat',
 			title: 'Vies amb "maxheight"',
 			query: '(way[highway=motorway][maxheight]({{bbox}});node(w);way[highway=trunk][maxheight]({{bbox}});node(w);way[highway=primary][maxheight]({{bbox}});node(w);way[highway=secondary][maxheight]({{bbox}});node(w);way[highway=tertiary][maxheight]({{bbox}});node(w);way[highway=unclassified][maxheight]({{bbox}});node(w);way[highway=track][maxheight]({{bbox}});node(w);way[highway=residential][maxheight]({{bbox}});node(w);way[highway=service][maxheight]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxheight.svg',
+			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxheight') || '';
 				if (maxspeed === ''){
@@ -829,7 +829,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.3)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxheight_empty.svg',
+							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
@@ -845,7 +845,7 @@ var config = {
 			group: 'Mobilitat',
 			title: 'Vies amb "maxlength"',
 			query: '(way[highway=motorway][maxlength]({{bbox}});node(w);way[highway=trunk][maxlength]({{bbox}});node(w);way[highway=primary][maxlength]({{bbox}});node(w);way[highway=secondary][maxlength]({{bbox}});node(w);way[highway=tertiary][maxlength]({{bbox}});node(w);way[highway=unclassified][maxlength]({{bbox}});node(w);way[highway=track][maxlength]({{bbox}});node(w);way[highway=residential][maxlength]({{bbox}});node(w);way[highway=service][maxlength]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxlength.svg',
+			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxlength') || '';
 				if (maxspeed === ''){
@@ -873,7 +873,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.1)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxlength_empty.svg',
+							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
@@ -889,7 +889,7 @@ var config = {
 			group: 'Mobilitat',
 			title: 'Vies amb "maxwidth"',
 			query: '(way[highway=motorway][maxwidth]({{bbox}});node(w);way[highway=trunk][maxwidth]({{bbox}});node(w);way[highway=primary][maxwidth]({{bbox}});node(w);way[highway=secondary][maxwidth]({{bbox}});node(w);way[highway=tertiary][maxwidth]({{bbox}});node(w);way[highway=unclassified][maxwidth]({{bbox}});node(w);way[highway=track][maxwidth]({{bbox}});node(w);way[highway=residential][maxwidth]({{bbox}});node(w);way[highway=service][maxwidth]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxwidth') || '';
 				if (maxspeed === ''){
@@ -917,7 +917,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.7)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxwidth_empty.svg',
+							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
@@ -933,7 +933,7 @@ var config = {
 			group: 'Mobilitat',
 			title: 'Vies amb "maxweight"',
 			query: '(way[highway=motorway][maxweight]({{bbox}});node(w);way[highway=trunk][maxweight]({{bbox}});node(w);way[highway=primary][maxweight]({{bbox}});node(w);way[highway=secondary][maxweight]({{bbox}});node(w);way[highway=tertiary][maxweight]({{bbox}});node(w);way[highway=unclassified][maxweight]({{bbox}});node(w);way[highway=track][maxweight]({{bbox}});node(w);way[highway=residential][maxweight]({{bbox}});node(w);way[highway=service][maxweight]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxweight.svg',
+			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxweight') || '';
 				if (maxspeed === ''){
@@ -961,7 +961,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.9)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxweight_empty.svg',
+							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
@@ -977,7 +977,7 @@ var config = {
 			group: 'Mobilitat',
 			title: 'Vies amb "maxaxleload"',
 			query: '(way[highway=motorway][maxaxleload]({{bbox}});node(w);way[highway=trunk][maxaxleload]({{bbox}});node(w);way[highway=primary][maxaxleload]({{bbox}});node(w);way[highway=secondary][maxaxleload]({{bbox}});node(w);way[highway=tertiary][maxaxleload]({{bbox}});node(w);way[highway=unclassified][maxaxleload]({{bbox}});node(w);way[highway=track][maxaxleload]({{bbox}});node(w);way[highway=residential][maxaxleload]({{bbox}});node(w);way[highway=service][maxaxleload]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload.svg',
+			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxaxleload') || '';
 				if (maxspeed === ''){
@@ -1005,7 +1005,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxaxleload_empty.svg',
+							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
