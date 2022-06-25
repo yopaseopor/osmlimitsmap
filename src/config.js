@@ -786,7 +786,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.06
+							scale:0.07
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -830,7 +830,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.4)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.06
+							scale:0.07
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -874,7 +874,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.3)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.06
+							scale:0.07
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -918,7 +918,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.2)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.06
+							scale:0.07
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -962,7 +962,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.1)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.06
+							scale:0.07
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1006,7 +1006,7 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
-							scale:0.06
+							scale:0.07
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
