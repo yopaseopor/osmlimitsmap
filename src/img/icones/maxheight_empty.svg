@@ -4,38 +4,11 @@
    width="48.0625"
    height="48.15625"
    id="svg2"
-   sodipodi:docname="maxheight.svg"
-   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1027"
-     id="namedview6864"
-     showgrid="false"
-     inkscape:zoom="15.262816"
-     inkscape:cx="24.045366"
-     inkscape:cy="24.569516"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg2"
-     inkscape:showpageshadow="2"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1" />
   <metadata
      id="metadata3059">
     <rdf:RDF>
@@ -50,9 +23,7 @@
   <defs
      id="defs3057" />
   <g
-     inkscape:groupmode="layer"
-     id="layer25"
-     inkscape:label="Layer 1" />
+     id="layer25" />
   <path
      d="m 6.3592028,24.033566 c 0,-9.705571 7.8680892,-17.5746569 17.5766502,-17.5746569 9.706567,0 17.575653,7.8680899 17.575653,17.5746569 0,9.707564 -7.868089,17.575654 -17.575653,17.575654 C 14.228289,41.608223 6.3592028,33.74113 6.3592028,24.033566"
      id="path15"
@@ -78,18 +49,12 @@
        id="path3819" />
   </g>
   <g
-     inkscape:groupmode="layer"
      id="layer27"
-     inkscape:label="Layer 3"
      style="display:inline" />
   <g
-     inkscape:groupmode="layer"
      id="layer26"
-     inkscape:label="Layer 2"
      style="display:inline" />
   <g
-     inkscape:groupmode="layer"
      id="layer28"
-     inkscape:label="Layer 4"
      style="display:inline" />
 </svg>
