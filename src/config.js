@@ -785,7 +785,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxspeed_empty.svg',
+							src: imgSrc + 'icones/maxheight_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
@@ -917,7 +917,7 @@ var config = {
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.7)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/maxspeed_empty.svg',
+							src: imgSrc + 'icones/maxwidth_empty.svg',
 							scale:0.07
 						}),
 						text: new ol.style.Text({
