@@ -834,7 +834,7 @@ var config = {
 						}),
 						text: new ol.style.Text({
 							text: maxspeed,
-								font: 'small-caps bold 18px/1 sans-serif',
+								font: 'small-caps bold 10px/1 sans-serif',
 						})
 					}));
 				}
