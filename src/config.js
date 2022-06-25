@@ -756,7 +756,7 @@ var config = {
 		{
 			group: 'Mobilitat',
 			title: 'Vies amb "maxspeed"',
-			query: '(way[highway=motorway][maxspeed]({{bbox}});node(w);way[highway=trunk][maxspeed]({{bbox}});node(w);way[highway=primary][maxspeed]({{bbox}});node(w);way[highway=secondary][maxspeed]({{bbox}});node(w);way[highway=tertiary][maxspeed]({{bbox}});node(w);way[highway=unclassified][maxspeed]({{bbox}});node(w);way[highway=track][maxspeed]({{bbox}});node(w);way[highway=residential][maxspeed]({{bbox}});node(w);way[highway=service][maxspeed]({{bbox}});node(w););out meta;',
+			query: '(way[highway=motorway][maxspeed]({{bbox}});node(w);way[highway=trunk][maxspeed]({{bbox}});node(w);way[highway=primary][maxspeed]({{bbox}});node(w);way[highway=secondary][maxspeed]({{bbox}});node(w);way[highway=tertiary][maxspeed]({{bbox}});node(w);way[highway=unclassified][maxspeed]({{bbox}});node(w);way[highway=track][maxspeed]({{bbox}});node(w);way[highway=living_street][maxspeed]({{bbox}});node(w);way[highway=pedestrian][maxspeed]({{bbox}});node(w);way[highway=residential][maxspeed]({{bbox}});node(w);way[highway=service][maxspeed]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxspeed') || '';
@@ -801,7 +801,7 @@ var config = {
 		{
 			group: 'Mobilitat',
 			title: 'Vies amb "maxheight"',
-			query: '(way[highway=motorway][maxheight]({{bbox}});node(w);way[highway=trunk][maxheight]({{bbox}});node(w);way[highway=primary][maxheight]({{bbox}});node(w);way[highway=secondary][maxheight]({{bbox}});node(w);way[highway=tertiary][maxheight]({{bbox}});node(w);way[highway=unclassified][maxheight]({{bbox}});node(w);way[highway=track][maxheight]({{bbox}});node(w);way[highway=residential][maxheight]({{bbox}});node(w);way[highway=service][maxheight]({{bbox}});node(w););out meta;',
+			query: '(way[highway=motorway][maxheight]({{bbox}});node(w);way[highway=trunk][maxheight]({{bbox}});node(w);way[highway=primary][maxheight]({{bbox}});node(w);way[highway=secondary][maxheight]({{bbox}});node(w);way[highway=tertiary][maxheight]({{bbox}});node(w);way[highway=unclassified][maxheight]({{bbox}});node(w);way[highway=track][maxheight]({{bbox}});node(w);way[highway=living_street][maxheight]({{bbox}});node(w);way[highway=pedestrian][maxheight]({{bbox}});node(w);way[highway=residential][maxheight]({{bbox}});node(w);way[highway=service][maxheight]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxheight.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxheight') || '';
@@ -846,7 +846,7 @@ var config = {
 		{
 			group: 'Mobilitat',
 			title: 'Vies amb "maxlength"',
-			query: '(way[highway=motorway][maxlength]({{bbox}});node(w);way[highway=trunk][maxlength]({{bbox}});node(w);way[highway=primary][maxlength]({{bbox}});node(w);way[highway=secondary][maxlength]({{bbox}});node(w);way[highway=tertiary][maxlength]({{bbox}});node(w);way[highway=unclassified][maxlength]({{bbox}});node(w);way[highway=track][maxlength]({{bbox}});node(w);way[highway=residential][maxlength]({{bbox}});node(w);way[highway=service][maxlength]({{bbox}});node(w););out meta;',
+			query: '(way[highway=motorway][maxlength]({{bbox}});node(w);way[highway=trunk][maxlength]({{bbox}});node(w);way[highway=primary][maxlength]({{bbox}});node(w);way[highway=secondary][maxlength]({{bbox}});node(w);way[highway=tertiary][maxlength]({{bbox}});node(w);way[highway=unclassified][maxlength]({{bbox}});node(w);way[highway=track][maxlength]({{bbox}});node(w);way[highway=living_street][maxlength]({{bbox}});node(w);way[highway=pedestrian][maxlength]({{bbox}});node(w);way[highway=residential][maxlength]({{bbox}});node(w);way[highway=service][maxlength]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxlength.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxlength') || '';
@@ -890,7 +890,7 @@ var config = {
 		{
 			group: 'Mobilitat',
 			title: 'Vies amb "maxwidth"',
-			query: '(way[highway=motorway][maxwidth]({{bbox}});node(w);way[highway=trunk][maxwidth]({{bbox}});node(w);way[highway=primary][maxwidth]({{bbox}});node(w);way[highway=secondary][maxwidth]({{bbox}});node(w);way[highway=tertiary][maxwidth]({{bbox}});node(w);way[highway=unclassified][maxwidth]({{bbox}});node(w);way[highway=track][maxwidth]({{bbox}});node(w);way[highway=residential][maxwidth]({{bbox}});node(w);way[highway=service][maxwidth]({{bbox}});node(w););out meta;',
+			query: '(way[highway=motorway][maxwidth]({{bbox}});node(w);way[highway=trunk][maxwidth]({{bbox}});node(w);way[highway=primary][maxwidth]({{bbox}});node(w);way[highway=secondary][maxwidth]({{bbox}});node(w);way[highway=tertiary][maxwidth]({{bbox}});node(w);way[highway=unclassified][maxwidth]({{bbox}});node(w);way[highway=track][maxwidth]({{bbox}});node(w);way[highway=living_street][maxwidth]({{bbox}});node(w);way[highway=pedestrian][maxwidth]({{bbox}});node(w);way[highway=residential][maxwidth]({{bbox}});node(w);way[highway=service][maxwidth]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxwidth') || '';
@@ -934,7 +934,7 @@ var config = {
 		{
 			group: 'Mobilitat',
 			title: 'Vies amb "maxweight"',
-			query: '(way[highway=motorway][maxweight]({{bbox}});node(w);way[highway=trunk][maxweight]({{bbox}});node(w);way[highway=primary][maxweight]({{bbox}});node(w);way[highway=secondary][maxweight]({{bbox}});node(w);way[highway=tertiary][maxweight]({{bbox}});node(w);way[highway=unclassified][maxweight]({{bbox}});node(w);way[highway=track][maxweight]({{bbox}});node(w);way[highway=residential][maxweight]({{bbox}});node(w);way[highway=service][maxweight]({{bbox}});node(w););out meta;',
+			query: '(way[highway=motorway][maxweight]({{bbox}});node(w);way[highway=trunk][maxweight]({{bbox}});node(w);way[highway=primary][maxweight]({{bbox}});node(w);way[highway=secondary][maxweight]({{bbox}});node(w);way[highway=tertiary][maxweight]({{bbox}});node(w);way[highway=unclassified][maxweight]({{bbox}});node(w);way[highway=track][maxweight]({{bbox}});node(w);way[highway=living_street][maxweight]({{bbox}});node(w);way[highway=pedestrian][maxweight]({{bbox}});node(w);way[highway=residential][maxweight]({{bbox}});node(w);way[highway=service][maxweight]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxweight.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxweight') || '';
@@ -978,7 +978,7 @@ var config = {
 		{
 			group: 'Mobilitat',
 			title: 'Vies amb "maxaxleload"',
-			query: '(way[highway=motorway][maxaxleload]({{bbox}});node(w);way[highway=trunk][maxaxleload]({{bbox}});node(w);way[highway=primary][maxaxleload]({{bbox}});node(w);way[highway=secondary][maxaxleload]({{bbox}});node(w);way[highway=tertiary][maxaxleload]({{bbox}});node(w);way[highway=unclassified][maxaxleload]({{bbox}});node(w);way[highway=track][maxaxleload]({{bbox}});node(w);way[highway=residential][maxaxleload]({{bbox}});node(w);way[highway=service][maxaxleload]({{bbox}});node(w););out meta;',
+			query: '(way[highway=motorway][maxaxleload]({{bbox}});node(w);way[highway=trunk][maxaxleload]({{bbox}});node(w);way[highway=primary][maxaxleload]({{bbox}});node(w);way[highway=secondary][maxaxleload]({{bbox}});node(w);way[highway=tertiary][maxaxleload]({{bbox}});node(w);way[highway=unclassified][maxaxleload]({{bbox}});node(w);way[highway=track][maxaxleload]({{bbox}});node(w);way[highway=living_street][maxaxleload]({{bbox}});node(w);way[highway=pedestrian][maxaxleload]({{bbox}});node(w);way[highway=residential][maxaxleload]({{bbox}});node(w);way[highway=service][maxaxleload]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxaxleload.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxaxleload') || '';
