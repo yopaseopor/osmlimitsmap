@@ -833,7 +833,8 @@ var config = {
 							scale:0.07
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+							text: maxspeed,
+								font: 'small-caps bold 18px/1 sans-serif',
 						})
 					}));
 				}
