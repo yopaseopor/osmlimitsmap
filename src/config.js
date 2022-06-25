@@ -827,7 +827,7 @@ var config = {
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.4)), // show the image in the middle of the segment
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.3)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
@@ -871,7 +871,7 @@ var config = {
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.3)), // show the image in the middle of the segment
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.1)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
@@ -915,7 +915,7 @@ var config = {
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.2)), // show the image in the middle of the segment
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.7)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
@@ -959,7 +959,7 @@ var config = {
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.1)), // show the image in the middle of the segment
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.9)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
@@ -1003,7 +1003,7 @@ var config = {
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxspeed_empty.svg',
 							scale:0.07
