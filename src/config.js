@@ -1024,20 +1024,29 @@ var config = {
 			group: 'Falta / Missing',
 			title: 'No maxaxleload',
 			query: '(way[highway=motorway][!"maxaxleload"]({{bbox}});node(w);way[highway=trunk][!"maxaxleload"]({{bbox}});node(w);way[highway=primary][!"maxaxleload"]({{bbox}});node(w);way[highway=secondary][!"maxaxleload"]({{bbox}});node(w);way[highway=tertiary][!"maxaxleload"]({{bbox}});node(w);way[highway=unclassified][!"maxaxleload"]({{bbox}});node(w);way[highway=track][!"maxaxleload"]({{bbox}});node(w);way[highway=living_street][!"maxaxleload"]({{bbox}});node(w);way[highway=pedestrian][!"maxaxleload"]({{bbox}});node(w);way[highway=residential][!"maxaxleload"]({{bbox}});node(w);way[highway=service][!"maxaxleload"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxaxleload.svg',
-			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
 			style: function (feature) {
-				var key_regex = /^maxaxleload$/
-				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
-				var name = feature.get(name_key) || '';
-				var fill = new ol.style.Fill({
-					color: 'rgba(0,0,0,0.4)'
-				});
+				var maxspeed = feature.get('maxaxleload') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
+
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,0,0,1)',
-					width: 1
+					color: 'rgb(' + color.join() + ')',
+					width: width
 				});
-				/* show the speed sign */ 
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
 					var coords = feature.getGeometry().getCoordinates();
 
 					styles.push(new ol.style.Style({
@@ -1046,20 +1055,15 @@ var config = {
 							src: imgSrc + 'icones/maxaxleload_question.svg',
 							scale:0.07
 						}),
-							text: new ol.style.Text({
-								text: name,
-								offsetX : 0,
-								offsetY : 20,
-								fill: new ol.style.Fill({
-                            color: 'rgba(0,0,0,1)'
-                        })
-						}),
-					fill: fill,
-					stroke: stroke
-				});
-				return style;
+						text: new ol.style.Text({
+							text: maxspeed
+						})
+					}));
+				}
+
+				return styles;
 			}
-  },
+},
 		
 				// Left Ticket
 		{
