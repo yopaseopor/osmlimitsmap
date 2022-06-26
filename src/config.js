@@ -790,7 +790,7 @@ var config = {
 						}),
 						text: new ol.style.Text({
 							text: maxspeed,
-								font: 'small-caps bold 18px/1 sans-serif',
+								font: 'small-caps bold 16px/1 sans-serif',
 						})
 					}));
 				}
@@ -967,7 +967,8 @@ var config = {
 							scale:0.07
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+							text: maxspeed,
+								font: 'bold 14px/1 Verdana',
 						})
 					}));
 				}
