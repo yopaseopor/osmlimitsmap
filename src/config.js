@@ -1025,20 +1025,13 @@ var config = {
 			title: 'No maxaxleload',
 			query: '(way[highway=motorway][!"maxaxleload"]({{bbox}});node(w);way[highway=trunk][!"maxaxleload"]({{bbox}});node(w);way[highway=primary][!"maxaxleload"]({{bbox}});node(w);way[highway=secondary][!"maxaxleload"]({{bbox}});node(w);way[highway=tertiary][!"maxaxleload"]({{bbox}});node(w);way[highway=unclassified][!"maxaxleload"]({{bbox}});node(w);way[highway=track][!"maxaxleload"]({{bbox}});node(w);way[highway=living_street][!"maxaxleload"]({{bbox}});node(w);way[highway=pedestrian][!"maxaxleload"]({{bbox}});node(w);way[highway=residential][!"maxaxleload"]({{bbox}});node(w);way[highway=service][!"maxaxleload"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
-			style: function (feature) {
-				var maxspeed = feature.get('maxaxleload') || '';
-				if (maxspeed === ''){
-					return undefined;
-				}
-				var styles = [];
-
-				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
-				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
-
+			style: function () {
+				var fill = new ol.style.Fill({
+					color: 'rgba(255,0,0,0.4)'
+				});
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ')',
-					width: width
+					color: 'rgba(255,0,0,1)',
+					width: 1.25
 				});
 				styles.push(new ol.style.Style({
 					stroke: stroke
