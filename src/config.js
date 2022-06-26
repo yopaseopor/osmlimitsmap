@@ -790,7 +790,7 @@ var config = {
 						}),
 						text: new ol.style.Text({
 							text: maxspeed,
-								font: 'small-caps bold 16px/1 sans-serif',
+								font: 'bold 14px/1 Arial',
 						})
 					}));
 				}
