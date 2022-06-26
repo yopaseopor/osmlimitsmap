@@ -766,7 +766,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -811,7 +811,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -856,7 +856,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -900,7 +900,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -944,7 +944,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -989,7 +989,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 0.5;
+				var width = (parseFloat(maxspeed) / 30) + 2.5;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
