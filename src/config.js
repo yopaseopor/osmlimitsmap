@@ -1026,24 +1026,7 @@ var config = {
 			query: '(way[highway=motorway][!"maxaxleload"]({{bbox}});node(w);way[highway=trunk][!"maxaxleload"]({{bbox}});node(w);way[highway=primary][!"maxaxleload"]({{bbox}});node(w);way[highway=secondary][!"maxaxleload"]({{bbox}});node(w);way[highway=tertiary][!"maxaxleload"]({{bbox}});node(w);way[highway=unclassified][!"maxaxleload"]({{bbox}});node(w);way[highway=track][!"maxaxleload"]({{bbox}});node(w);way[highway=living_street][!"maxaxleload"]({{bbox}});node(w);way[highway=pedestrian][!"maxaxleload"]({{bbox}});node(w);way[highway=residential][!"maxaxleload"]({{bbox}});node(w);way[highway=service][!"maxaxleload"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
 			style: function () {
-				var fill = new ol.style.Fill({
-					color: 'rgba(255,0,0,0.4)'
-				});
-				var stroke = new ol.style.Stroke({
-					color: 'rgba(255,0,0,1)',
-					width: 1.25
-				});
-				styles.push(new ol.style.Style({
-					stroke: stroke
-				}));
-
-				// doesn't show speed sign in roundabout and similars
-				if (!feature.get('junction')) {
-					/* show the speed sign */ 
-					var coords = feature.getGeometry().getCoordinates();
-
-					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
+				var style = new ol.style.Style({
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/maxaxleload_question.svg',
 							scale:0.07
