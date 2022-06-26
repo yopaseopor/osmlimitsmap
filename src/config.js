@@ -1052,7 +1052,7 @@ var config = {
 								offsetY : 20,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
-                        }),
+                        })
 						}),
 					fill: fill,
 					stroke: stroke
