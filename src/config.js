@@ -968,7 +968,7 @@ var config = {
 						}),
 						text: new ol.style.Text({
 							text: maxspeed,
-								font: 'bold 12px/1 ',
+								font: 'bold 12px/1 Arial',
 						})
 					}));
 				}
