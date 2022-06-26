@@ -1019,7 +1019,47 @@ var config = {
 
 				return styles;
 			}
-		},
+},
+		{
+			group: 'Falta / Missing',
+			title: 'No maxaxleload',
+			query: '(way[highway=motorway][!"maxaxleload"]({{bbox}});node(w);way[highway=trunk][!"maxaxleload"]({{bbox}});node(w);way[highway=primary][!"maxaxleload"]({{bbox}});node(w);way[highway=secondary][!"maxaxleload"]({{bbox}});node(w);way[highway=tertiary][!"maxaxleload"]({{bbox}});node(w);way[highway=unclassified][!"maxaxleload"]({{bbox}});node(w);way[highway=track][!"maxaxleload"]({{bbox}});node(w);way[highway=living_street][!"maxaxleload"]({{bbox}});node(w);way[highway=pedestrian][!"maxaxleload"]({{bbox}});node(w);way[highway=residential][!"maxaxleload"]({{bbox}});node(w);way[highway=service][!"maxaxleload"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxaxleload.svg',
+			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			style: function (feature) {
+				var key_regex = /^maxaxleload$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,0,0,1)',
+					width: 1
+				});
+				/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/maxaxleload_empty.svg',
+							scale:0.07
+						}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
 		
 				// Left Ticket
 		{
