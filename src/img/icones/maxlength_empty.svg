@@ -10,9 +10,9 @@
    sodipodi:version="0.32"
    x="0px"
    y="0px"
-   width="576px"
-   height="576px"
-   viewBox="0 0 576 576"
+   width="576"
+   height="620"
+   viewBox="0 0 576 620"
    enable-background="new 0 0 576 576"
    xml:space="preserve"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -23,11 +23,11 @@
    id="defs1485">
 	<inkscape:perspective
    id="perspective2469"
-   inkscape:persp3d-origin="288 : 192 : 1"
+   inkscape:persp3d-origin="288 : 236 : 1"
    sodipodi:type="inkscape:persp3d"
-   inkscape:vp_x="0 : 288 : 1"
+   inkscape:vp_x="0 : 332 : 1"
    inkscape:vp_y="0 : 1000 : 0"
-   inkscape:vp_z="576 : 288 : 1" />
+   inkscape:vp_z="576 : 332 : 1" />
 </defs>
 <sodipodi:namedview
    id="base"
@@ -39,7 +39,7 @@
    inkscape:pageshadow="2"
    inkscape:pageopacity="0.0"
    objecttolerance="10.0"
-   inkscape:cy="227.74739"
+   inkscape:cy="377.00557"
    borderopacity="1.0"
    showgrid="false"
    inkscape:cx="54.685108"
