@@ -1034,12 +1034,10 @@ var config = {
 						text: new ol.style.Text({
 							text: maxspeed
 						})
-					}));
-				}
-
-				return styles;
+				});
+				return style;
 			}
-},
+		},
 		
 				// Left Ticket
 		{
