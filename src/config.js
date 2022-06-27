@@ -930,6 +930,50 @@ var config = {
 
 				return styles;
 			}
+},
+		{
+			group: 'Mobilitat',
+			title: 'Vies amb "width"',
+			query: '(way[highway=motorway][width]({{bbox}});node(w);way[highway=trunk][width]({{bbox}});node(w);way[highway=primary][width]({{bbox}});node(w);way[highway=secondary][width]({{bbox}});node(w);way[highway=tertiary][width]({{bbox}});node(w);way[highway=unclassified][width]({{bbox}});node(w);way[highway=track][width]({{bbox}});node(w);way[highway=living_street][width]({{bbox}});node(w);way[highway=pedestrian][width]({{bbox}});node(w);way[highway=residential][width]({{bbox}});node(w);way[highway=service][width]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxwidth.svg',
+			style: function (feature) {
+				var maxspeed = feature.get('width') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
+				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgb(' + color.join() + ')',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.7)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/maxwidth_empty.svg',
+							scale:0.07
+						}),
+						text: new ol.style.Text({
+							text: maxspeed
+						})
+					}));
+				}
+
+				return styles;
+			}
 		},
 		{
 			group: 'Mobilitat',
@@ -1135,6 +1179,43 @@ var config = {
 			group: 'Falta / Missing',
 			title: 'No maxwidth',
 			query: '(way[highway=motorway][!"maxwidth"]({{bbox}});node(w);way[highway=trunk][!"maxwidth"]({{bbox}});node(w);way[highway=primary][!"maxwidth"]({{bbox}});node(w);way[highway=secondary][!"maxwidth"]({{bbox}});node(w);way[highway=tertiary][!"maxwidth"]({{bbox}});node(w);way[highway=unclassified][!"maxwidth"]({{bbox}});node(w);way[highway=track][!"maxwidth"]({{bbox}});node(w);way[highway=living_street][!"maxwidth"]({{bbox}});node(w);way[highway=pedestrian][!"maxwidth"]({{bbox}});node(w);way[highway=residential][!"maxwidth"]({{bbox}});node(w);way[highway=service][!"maxwidth"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxwidth_question.svg',
+			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,0,0,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+},
+		{
+			group: 'Falta / Missing',
+			title: 'No width',
+			query: '(way[highway=motorway][!"width"]({{bbox}});node(w);way[highway=trunk][!"width"]({{bbox}});node(w);way[highway=primary][!"width"]({{bbox}});node(w);way[highway=secondary][!"width"]({{bbox}});node(w);way[highway=tertiary][!"width"]({{bbox}});node(w);way[highway=unclassified][!"width"]({{bbox}});node(w);way[highway=track][!"width"]({{bbox}});node(w);way[highway=living_street][!"width"]({{bbox}});node(w);way[highway=pedestrian][!"width"]({{bbox}});node(w);way[highway=residential][!"width"]({{bbox}});node(w);way[highway=service][!"width"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth_question.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
