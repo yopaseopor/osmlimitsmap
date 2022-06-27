@@ -766,7 +766,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -811,7 +811,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -856,7 +856,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -900,7 +900,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -944,7 +944,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -989,7 +989,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 2.5;
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
@@ -1027,7 +1027,7 @@ var config = {
 			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
-				var key_regex = /^check_date$/
+				var key_regex = /^name$/
 				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
 				var name = feature.get(name_key) || '';
 				var fill = new ol.style.Fill({
