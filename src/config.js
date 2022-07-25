@@ -26,11 +26,11 @@ var config = {
 	},
 	overpassApi: function(){
 		// https://overpass-turbo.eu/
-		var proxyOverpassApi = false;
+		var proxyOverpassApi = true;
 		var overpassApi = 'https://overpass-api.de/api/interpreter';
 		if (proxyOverpassApi)
 		{
-			overpassApi = 'https://mijndev.openstreetmap.nl/~ligfietser/fiets/api/interpreter/';
+			overpassApi = 'https://overpass.kumi.systems/api/interpreter';
 		}
 		return overpassApi;
 	},
