@@ -755,8 +755,8 @@ var config = {
   },
 		{
 			group: 'Falta / Missing',
-			title: 'No tracktype2',
-			query: '(node["highway"="track"][!"tracktype"]({{bbox}});way["highway"="track"][!"tracktype"]({{bbox}});relation["highway"="track"][!"tracktype"]({{bbox}});node(w));out meta;',
+			title: 'No tracktype3',
+			query: '(way["highway"="track"][!"tracktype"]({{bbox}});node(w));out meta;',
 			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
