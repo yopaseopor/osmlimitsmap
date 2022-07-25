@@ -755,7 +755,7 @@ var config = {
   },
 		{
 			group: 'Falta / Missing',
-			title: 'No tracktype <a href="https://imgur.com/a/rioaJEC"A tenir en compte</a>',
+			title: 'No tracktype <a href="https://imgur.com/a/rioaJEC">A tenir en compte</a>',
 			query: '(way["highway"="track"][!"tracktype"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxaxleload_question.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
