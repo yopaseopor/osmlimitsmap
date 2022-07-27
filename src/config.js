@@ -16,6 +16,7 @@ var config = {
 	},
 	i18n: {
 		layersLabel: 'Layers',
+		editWith: 'Complete with:',
 		editWith: 'Edit with:',
 		openWith: 'Open with:',
 		checkTools: 'Validation:',
@@ -5419,6 +5420,10 @@ color: 'rgba(170, 170, 170, 0.3)'
 	//Es crida sempre que es fa click sobre el mapa
 	onClickEvent: function(evt, view, coordinateLL) {
 
+		var complete = $('<div>').html(config.i18n.completeWith);
+//Mapcomplete editor
+		complete.append($('<a>').css('marginLeft', 5).attr({title: 'Mapcomplete', href: 'https://mapcomplete.osm.be/index.html?z=' + view.getZoom() +'&lat='+ coordinateLL[1] +'&lon='+ coordinateLL[0] +'&userlayout=https%3A%2F%2Fraw.githubusercontent.com%2Fyopaseopor%2Fmcquests%2Fmain%2Flimits.json&language=ca#welcome', target: '_blank'}).html($('<img>').attr({src: imgSrc + 'mapcomplete_logo.png', height: 20, width: 20})));
+		
 		var edit = $('<div>').html(config.i18n.editWith);
 		//ID editor
 		edit.append($('<a>').css('marginLeft', 5).attr({title: 'iD', href: 'https://www.openstreetmap.org/edit?editor=id&lon=' + coordinateLL[0] + '&lat=' + coordinateLL[1] + '&zoom=' + view.getZoom(), target: '_blank'}).html($('<img>').attr({src: imgSrc + 'ID.svg', height: 20, width: 20})));
@@ -5445,7 +5450,7 @@ color: 'rgba(170, 170, 170, 0.3)'
 		//Geofabrik Tools
 		tool.append($('<a>').css('marginLeft', 5).attr({title: 'Geofabrik Tools', href: 'https://tools.geofabrik.de/osmi/?lon=' + coordinateLL[0] + '&lat=' + coordinateLL[1] + '&zoom=' + Math.min(view.getZoom(), 18) + '&view=tagging', target: '_blank'}).html($('<img>').attr({src: imgSrc + 'geofabrik.png', height: 20, width: 20})));
 
-		return $.merge($.merge(edit, open), tool);
+		return $.merge($.merge(complete, edit, open), tool);
 	},
 
 	//Es crida per cada element trobat al fer click
