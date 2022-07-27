@@ -16,7 +16,7 @@ var config = {
 	},
 	i18n: {
 		layersLabel: 'Layers',
-		editWith: 'Complete with:',
+		completeWith: 'Complete with:',
 		editWith: 'Edit with:',
 		openWith: 'Open with:',
 		checkTools: 'Validation:',
