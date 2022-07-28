@@ -379,7 +379,7 @@ var config = {
 				var color = linearColorInterpolation([0, 0, 0], [0, 0, 255], Math.min(maxspeed, 5) / 5);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ',0.5)',
+					color: 'rgb(' + color.join() + ',0.6)',
 					width: width
 				});
 				styles.push(new ol.style.Style({
