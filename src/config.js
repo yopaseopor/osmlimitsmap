@@ -364,7 +364,7 @@ var config = {
 },
 		{
 			group: 'Limits',
-			title: 'Vies amb "width2"',
+			title: 'Vies amb "width"',
 			query: '(way[highway=motorway][width]({{bbox}});node(w);way[highway=trunk][width]({{bbox}});node(w);way[highway=primary][width]({{bbox}});node(w);way[highway=secondary][width]({{bbox}});node(w);way[highway=tertiary][width]({{bbox}});node(w);way[highway=unclassified][width]({{bbox}});node(w);way[highway=track][width]({{bbox}});node(w);way[highway=living_street][width]({{bbox}});node(w);way[highway=pedestrian][width]({{bbox}});node(w);way[highway=residential][width]({{bbox}});node(w);way[highway=service][width]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxwidth.svg',
 			style: function (feature) {
@@ -375,7 +375,7 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 0.5) + 1.0;
+				var width = (parseFloat(maxspeed) / 0.1) + 1.0;
 				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 10) / 5);
 
 				var stroke = new ol.style.Stroke({
