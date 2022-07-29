@@ -376,7 +376,7 @@ var config = {
 
 				/* draw the segment line */ 
 				var width = (parseFloat(maxspeed) / 0.3) + 1.0;
-				var color = linearColorInterpolation([136, 0, 255], [0, 255, 255], Math.min(maxspeed, 20) / 20);
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 20) / 20);
 
 				var stroke = new ol.style.Stroke({
 					color: 'rgb(' + color.join() + ',0.5)',
