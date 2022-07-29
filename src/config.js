@@ -331,11 +331,11 @@ var config = {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 1.0;
-				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
+				var width = (parseFloat(maxspeed) / 0.3) + 1.0;
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 20) / 5);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ')',
+					color: 'rgb(' + color.join() + ',0.5)',
 					width: width
 				});
 				styles.push(new ol.style.Style({
