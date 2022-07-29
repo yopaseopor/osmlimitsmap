@@ -43,17 +43,16 @@ var config = {
 			source: new ol.source.OSM()
 		}),
 		new ol.layer.Tile({
-			title: 'OpenStreetMap B&W',
+			title: 'OpenStreetMap DE',
 			iconSrc: imgSrc + 'osmbw_logo-layer.png',
-			source: new ol.source.XYZ({
-				attributions: '&copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>',
-				//url: 'https://toolserver.org/tiles/bw-mapnik/{z}/{x}/{y}.png'
-				url: 'https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png'
+			source: new ol.source.OSM({
+				attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+				url: 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png'
 			}),
 			visible: false
 		}),
 		new ol.layer.Tile({// OpenStreetMap France https://openstreetmap.fr
-			title: 'OpenStreetMap France',
+			title: 'OpenStreetMap FR',
 			iconSrc: imgSrc + 'osmfr_logo-layer.png',
 			source: new ol.source.OSM({
 				attributions: '&copy; <a href="https://www.openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
@@ -63,10 +62,10 @@ var config = {
 		}),
 		new ol.layer.Tile({
 			title: 'OpenMapSurfer',
-			iconSrc: imgSrc + 'openroute_logo_layer.png',
+			iconSrc: imgSrc + 'stadia_maps.svg',
 			source: new ol.source.XYZ({
-				attributions: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap Contributors</a>, powered by <a href="https://mapsurfernet.com/" target="_blank">MapSurfer.NET</a>',
-				url: 'https://maps.heigit.org/openmapsurfer/tiles/roads/webmercator/{z}/{x}/{y}.png'
+				attributions: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap Contributors</a>, &copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+				url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
 			}),
 			visible: false
 		}),
