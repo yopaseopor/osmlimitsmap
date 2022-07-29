@@ -45,6 +45,7 @@ var config = {
 		new ol.layer.Tile({
 			title: 'OpenStreetMap DE',
 			iconSrc: imgSrc + 'osmbw_logo-layer.png',
+			maxZoom: 18,
 			source: new ol.source.XYZ({
 				attributions: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 				url: 'https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png'
@@ -61,10 +62,11 @@ var config = {
 			visible: false
 		}),
 		new ol.layer.Tile({
-			title: 'OpenMapSurfer',
+			title: 'Alidade Smooth (Stadia)',
 			iconSrc: imgSrc + 'stadia_maps.svg',
 			source: new ol.source.XYZ({
 				attributions: '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
+				maxZoom: 20,
 				url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png'
 			}),
 			visible: false
