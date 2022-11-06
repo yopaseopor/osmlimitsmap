@@ -545,8 +545,8 @@ style: function (feature) {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 30) + 1.0;
-				var color = linearColorInterpolation([0, 0, 255,0.5], [0, 255, 255,0.5], Math.min(maxspeed, 200) / 50);
+				var width = (parseFloat(maxspeed) / 0.03) + 1.0;
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 2) / 0.5);
 
 				var stroke = new ol.style.Stroke({
 					color: 'rgb(' + color.join() + ',0.5)',
@@ -565,10 +565,15 @@ style: function (feature) {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/incline_up.svg',
-							scale:0.14
+							scale:0.20
 						}),
-						text: new ol.style.Text({
-							text: maxspeed
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 7,
+								offsetY : -12,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						})
 					}));
 				}
