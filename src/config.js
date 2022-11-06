@@ -571,7 +571,7 @@ style: function (feature) {
 								text: maxspeed,
 								offsetX : 0,
 								offsetY : -1,
-								rotation : 4,
+								rotation : 6,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
                         }),
