@@ -488,9 +488,9 @@ var config = {
 				},
 		{
 			group: 'Limits',
-			title: 'Incline Up',
-			query: '(nwr["highway"!="steps"]["incline"~"^.[0-9]%"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/incline_up.svg',
+			title: 'Incline Down',
+			query: '(nwr["highway"!="steps"]["incline"~"^.[0-9].%"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'accessibilitat/incline_down.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
 				var key_regex = /^incline$/
