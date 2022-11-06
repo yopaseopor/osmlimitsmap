@@ -565,7 +565,7 @@ style: function (feature) {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/incline_up.svg',
-							scale:0.20
+							scale:0.22
 						}),
 							text: new ol.style.Text({
 								text: maxspeed,
