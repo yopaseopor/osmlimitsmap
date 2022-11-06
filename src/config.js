@@ -545,7 +545,7 @@ style: function (feature) {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 0.03) + 1.0;
+				var width = (parseFloat(maxspeed) / 0.15) + 1.0;
 				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 2) / 0.5);
 
 				var stroke = new ol.style.Stroke({
@@ -569,8 +569,8 @@ style: function (feature) {
 						}),
 							text: new ol.style.Text({
 								text: maxspeed,
-								offsetX : 7,
-								offsetY : -12,
+								offsetX : 0,
+								offsetY : -1,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
                         }),
