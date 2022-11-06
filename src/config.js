@@ -488,9 +488,9 @@ var config = {
 				},
 		{
 			group: 'Limits',
-			title: 'Incline Down',
-			query: '(nwr["highway"!="steps"]["incline"~"^.[0-9].%"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'accessibilitat/incline_down.svg',
+			title: 'Incline Up',
+			query: '(nwr["highway"!="steps"]["incline"~"^[0-9].%"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
 				var key_regex = /^incline$/
@@ -505,7 +505,7 @@ style: function (feature) {
 				});
 				var style = new ol.style.Style({
 					image: new ol.style.Icon({
-							src: imgSrc + 'accessibilitat/incline_up.svg',
+							src: imgSrc + 'icones/incline_up.svg',
 							scale:0.03
 						}),
 							text: new ol.style.Text({
