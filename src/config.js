@@ -489,7 +489,7 @@ var config = {
 		{
 			group: 'Limits',
 			title: 'Incline Up',
-			query: '(nwr["highway"!="steps"]["incline"~"^[0-90]%"]({{bbox}});node(w););out meta;',
+			query: '(nwr["highway"!="steps"]["incline"~"^[0-9].."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
@@ -525,7 +525,7 @@ style: function (feature) {
 		{
 			group: 'Limits',
 			title: 'Incline Down',
-			query: '(nwr["highway"!="steps"]["incline"~"^-[0-90]%"]({{bbox}});node(w););out meta;',
+			query: '(nwr["highway"!="steps"]["incline"~"^-[0-9].."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_down.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 style: function (feature) {
