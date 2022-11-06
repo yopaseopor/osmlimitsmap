@@ -488,7 +488,7 @@ var config = {
 				},
 		{
 			group: 'Limits',
-			title: 'Incline Up',
+			title: 'Incline Upold',
 			query: '(nwr["highway"!="steps"]["incline"~"^[0-9]."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -584,7 +584,7 @@ style: function (feature) {
 		},
 		{
 			group: 'Limits',
-			title: 'Incline Down',
+			title: 'Incline Downold',
 			query: '(nwr["highway"!="steps"]["incline"~"^-[0-9]."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_down.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -626,7 +626,58 @@ style: function (feature) {
 
 				return styles;
 			}
-				},
+},
+		{
+			group: 'Limits',
+			title: 'Incline Down',
+			query: '(nwr["highway"!="steps"]["incline"~"^-[0-9]."]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/incline_down.svg',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
+			style: function (feature) {
+				var maxspeed = feature.get('incline') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed*100) / 0.03) + 1.0;
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min((maxspeed*100), 20) / 5);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgb(' + color.join() + ',0.5)',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/incline_down.svg',
+							scale:0.20
+						}),
+							text: new ol.style.Text({
+								text: maxspeed,
+								offsetX : 0,
+								offsetY : -1,
+								rotation : 0.5,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						})
+					}));
+				}
+
+				return styles;
+			}
+		},
 		{
 			group: 'No limits',
 			title: 'No maxspeed',
