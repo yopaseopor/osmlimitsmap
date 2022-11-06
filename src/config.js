@@ -569,7 +569,7 @@ style: function (feature) {
 						}),
 							text: new ol.style.Text({
 								text: maxspeed,
-								offsetX : 1,
+								offsetX : -1,
 								offsetY : 3,
 								rotation : 5.7,
 								fill: new ol.style.Fill({
