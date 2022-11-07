@@ -629,7 +629,7 @@ style: function (feature) {
 },
 		{
 			group: 'Limits',
-			title: 'Incline Down',
+			title: 'Incline Down2',
 			query: '(nwr["highway"!="steps"]["incline"~"^-[0-9]."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_down.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -642,10 +642,10 @@ style: function (feature) {
 
 				/* draw the segment line */ 
 				var width = (parseFloat(maxspeed) / 0.3) + 1.0;
-				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 20) / 5);
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(' + color.join() + ',0.5)',
+					color: 'rgb(' + color.join() + ')',
 					width: width
 				});
 				styles.push(new ol.style.Style({
