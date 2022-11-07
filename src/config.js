@@ -645,7 +645,7 @@ style: function (feature) {
 				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed, 20) / 5);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ',0.5)',
+					color: 'rgba(' + color.join() + ',0.5)',
 					width: width
 				});
 				styles.push(new ol.style.Style({
