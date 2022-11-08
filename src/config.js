@@ -533,7 +533,7 @@ style: function (feature) {
 },
 		{
 			group: 'Limits',
-			title: 'Incline Up3',
+			title: 'Incline Up',
 			query: '(nwr["highway"!="steps"]["incline"~"^[0-9]."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -549,7 +549,7 @@ style: function (feature) {
 				var color = linearColorInterpolation([255, 255, 255], [255, 255, 255], Math.min(maxspeed, 0.02) / 5);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ',0.5)',
+					color: 'rgb(' + color.join() + ')',
 					width: width
 				});
 				styles.push(new ol.style.Style({
