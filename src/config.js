@@ -488,7 +488,7 @@ var config = {
 				},
 		{
 			group: 'Limits',
-			title: 'Incline Upold2',
+			title: 'Incline Upold3',
 			query: '(nwr["highway"!="steps"]["incline"~"^[0-9]."]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
@@ -545,7 +545,7 @@ style: function (feature) {
 				var styles = [];
 
 				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 0.6) + 1.0;
+				var width = (parseFloat(maxspeed) / 0.8) + 1.0;
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
 
 				var stroke = new ol.style.Stroke({
