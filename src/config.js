@@ -485,51 +485,7 @@ var config = {
 
 				return styles;
 			}
-				},
-		{
-			group: 'Limits',
-			title: 'Incline Upold',
-			query: '(nwr["highway"!="steps"]["incline"~"^[0-9]."]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/incline_up.svg',
-			iconStyle: 'background-color:rgba(255,255,255,0.4)',
-style: function (feature) {
-				var maxspeed = feature.get('incline') || '';
-				if (maxspeed === ''){
-					return undefined;
-				}
-				var styles = [];
 
-				/* draw the segment line */ 
-				var width = (parseFloat(maxspeed) / 0.3) + 1.0;
-				var color = linearColorInterpolation([0, 255, 0, 0.5], [255, 0, 0, 0.5], Math.min(maxspeed, 20) / 5);
-
-				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ',0.5)',
-					width: width
-				});
-				styles.push(new ol.style.Style({
-					stroke: stroke
-				}));
-
-				// doesn't show speed sign in roundabout and similars
-				if (!feature.get('junction')) {
-					/* show the speed sign */ 
-					var coords = feature.getGeometry().getCoordinates();
-
-					styles.push(new ol.style.Style({
-						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
-						image: new ol.style.Icon({
-							src: imgSrc + 'icones/incline_up.svg',
-							scale:0.30
-						}),
-						text: new ol.style.Text({
-							text: maxspeed
-						})
-					}));
-				}
-
-				return styles;
-			}
 },
 		{
 			group: 'Limits',
@@ -645,7 +601,7 @@ style: function (feature) {
 				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed) / 5);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ',0.5)',
+					color: 'rgba(0,255,255,0.4)',
 					width: width
 				});
 				styles.push(new ol.style.Style({
