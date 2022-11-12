@@ -974,6 +974,57 @@ style: function (feature) {
 				return style;
 			}
   },
+		{
+			group: 'No limits',
+			title: 'No incline',
+			query: '((way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][!"incline"]({{bbox}});node(w);way[highway=primary][!"incline"]({{bbox}});node(w);way[highway=secondary][!"incline"]({{bbox}});node(w);way[highway=tertiary][!"incline"]({{bbox}});node(w);way[highway=unclassified][!"incline"]({{bbox}});node(w);way[highway=track][!"incline"]({{bbox}});node(w);way[highway=path][!"incline"]({{bbox}});node(w);way[highway=living_street][!"incline"]({{bbox}});node(w);way[highway=pedestrian][!"incline"]({{bbox}});node(w);way[highway=residential][!"incline"]({{bbox}});node(w);way[highway=service][!"incline"]({{bbox}});node(w););out meta;'
+			iconSrc: imgSrc + 'icones/incline_up.svg',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
+			style: function (feature) {
+				var maxspeed = feature.get('highway') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / 0.8) + 1.0;
+				var color = linearColorInterpolation([255, 255, 255], [255, 255, 255], Math.min(maxspeed, 0.02) / 5);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgb(' + color.join() + ')',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/incline_up.svg',
+							scale:0.22
+						}),
+							text: new ol.style.Text({
+								text: "?",
+								offsetX : -4,
+								offsetY : 1,
+								rotation : 5.7,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						})
+					}));
+				}
+
+				return styles;
+			}
+		},
 		
 				// Left Ticket
 		{
