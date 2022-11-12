@@ -685,7 +685,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
-				var maxspeed = feature.get('maxspeed') || '';
+				var maxspeed = feature.get('highway') || '';
 				if (maxspeed === ''){
 					return undefined;
 				}
