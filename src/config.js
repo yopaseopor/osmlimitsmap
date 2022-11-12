@@ -549,7 +549,7 @@ style: function (feature) {
 				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 1) / 120);
 
 				var stroke = new ol.style.Stroke({
-					color: 'rgb(' + color.join() + ')',
+					color: 'rgba(0,0,255,0.4)',
 					width: width
 				});
 				styles.push(new ol.style.Style({
