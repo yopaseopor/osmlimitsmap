@@ -1011,7 +1011,7 @@ style: function (feature) {
 							scale:0.22
 						}),
 							text: new ol.style.Text({
-								text: "?",
+								text: '?',
 								offsetX : -4,
 								offsetY : 1,
 								rotation : 5.7,
