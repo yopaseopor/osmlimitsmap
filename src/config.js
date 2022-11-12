@@ -715,7 +715,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 							scale:0.22
 						}),
 							text: new ol.style.Text({
-								text: maxspeed,
+								text: '?',
 								offsetX : -4,
 								offsetY : 1,
 								rotation : 5.7,
