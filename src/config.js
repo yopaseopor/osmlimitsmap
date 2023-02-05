@@ -591,6 +591,57 @@ var config = {
 			}
 },
 		{
+			group: 'Limits',
+			title: 'Narrow',
+			query: '(nwr["narrow"="yes"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/narrow.svg',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
+			style: function (feature) {
+				var maxspeed = feature.get('name') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / -0.8) + 1.0;
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed) / 5);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,255,255,0.4)',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/narrow.svg',
+							scale:0.22
+						}),
+							text: new ol.style.Text({
+								text: maxspeed,
+								offsetX : 10,
+								offsetY : 2,
+								rotation : 0.0,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						})
+					}));
+				}
+
+				return styles;
+			}
+},
+		{
 			group: 'No limits',
 			title: 'No Incline',
 query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][!"incline"]({{bbox}});node(w);way[highway=primary][!"incline"]({{bbox}});node(w);way[highway=secondary][!"incline"]({{bbox}});node(w);way[highway=tertiary][!"incline"]({{bbox}});node(w);way[highway=unclassified][!"incline"]({{bbox}});node(w);way[highway=track][!"incline"]({{bbox}});node(w);way[highway=living_street][!"incline"]({{bbox}});node(w);way[highway=pedestrian][!"incline"]({{bbox}});node(w);way[highway=residential][!"incline"]({{bbox}});node(w);way[highway=service][!"incline"]({{bbox}});node(w););out meta;',
