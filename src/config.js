@@ -624,12 +624,12 @@ var config = {
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/narrow.svg',
-							scale:0.22
+							scale:0.10
 						}),
 							text: new ol.style.Text({
 								text: maxspeed,
 								offsetX : 10,
-								offsetY : 2,
+								offsetY : 5,
 								rotation : 0.0,
 								fill: new ol.style.Fill({
                             color: 'rgba(0,0,0,1)'
