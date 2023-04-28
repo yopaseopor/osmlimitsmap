@@ -490,7 +490,7 @@ var config = {
 		{
 			group: 'Limits',
 			title: 'Incline Up',
-			query: '(nwr["highway"!="steps"]["incline"~"^[0-9]."]({{bbox}});node(w););out meta;',
+			query: '(nwr["highway"]["incline"~"^[0-9]."]({{bbox}});node(w);way[highway]["incline"="up"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
@@ -542,7 +542,7 @@ var config = {
 		{
 			group: 'Limits',
 			title: 'Incline Down',
-			query: '(nwr["highway"!="steps"]["incline"~"^-[0-9]."]({{bbox}});node(w););out meta;',
+			query: '(way["highway"]["incline"~"^-[0-9]."]({{bbox}});node(w);way[highway]["incline"="down"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_down.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
@@ -644,7 +644,7 @@ var config = {
 		{
 			group: 'No limits',
 			title: 'No Incline',
-query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][!"incline"]({{bbox}});node(w);way[highway=primary][!"incline"]({{bbox}});node(w);way[highway=secondary][!"incline"]({{bbox}});node(w);way[highway=tertiary][!"incline"]({{bbox}});node(w);way[highway=unclassified][!"incline"]({{bbox}});node(w);way[highway=track][!"incline"]({{bbox}});node(w);way[highway=living_street][!"incline"]({{bbox}});node(w);way[highway=pedestrian][!"incline"]({{bbox}});node(w);way[highway=residential][!"incline"]({{bbox}});node(w);way[highway=service][!"incline"]({{bbox}});node(w););out meta;',
+query: '(way[highway][!"incline"]({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/incline_up.svg',
 			iconStyle: 'background-color:rgba(255,255,255,0.4)',
 			style: function (feature) {
