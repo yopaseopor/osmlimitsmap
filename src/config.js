@@ -640,6 +640,67 @@ var config = {
 
 				return styles;
 			}
+		},
+		// Mobilitat
+		{
+			group: 'Limits',
+			title: 'Radars',
+			query: 'node[highway=speed_camera]({{bbox}});out meta;',
+			iconSrc: imgSrc + 'icones/radar.png',
+			style: function () {
+				var style = new ol.style.Style({
+					image: new ol.style.Icon({
+						src: imgSrc + 'icones/radar.png'
+					})
+				});
+				return style;
+			}
+		},
+		// Mobilitat
+		{
+			group: 'Limits',
+			title: 'Radar tram',
+			query: '(nwr[enforcement=average_speed][maxspeed]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/maxspeed.svg',
+			style: function (feature) {
+				var maxspeed = feature.get('maxspeed') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / 30) + 1.0;
+				var color = linearColorInterpolation([0, 255, 0], [255, 0, 0], Math.min(maxspeed, 120) / 120);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgb(' + color.join() + ')',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.5)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/maxspeed_empty.svg',
+							scale:0.07
+						}),
+						text: new ol.style.Text({
+							text: maxspeed,
+								font: 'bold 14px/1 Arial',
+						})
+					}));
+				}
+
+				return styles;
+			}
 },
 		{
 			group: 'No limits',
