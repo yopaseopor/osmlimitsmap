@@ -660,7 +660,7 @@ var config = {
 		{
 			group: 'Limits',
 			title: 'Radar tram',
-			query: '(nwr[enforcement=average_speed][maxspeed]({{bbox}});node(w););out meta;',
+			query: '(nwr["enforcement"="average_speed"][maxspeed]({{bbox}});way(r)({{bbox}});node(w););out meta;',
 			iconSrc: imgSrc + 'icones/maxspeed.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('maxspeed') || '';
