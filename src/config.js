@@ -640,6 +640,108 @@ var config = {
 
 				return styles;
 			}
+},
+		{
+			group: 'Limits',
+			title: 'Bridge',
+			query: '(nwr["bridge"="yes"][check_date]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/narrow.svg',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
+			style: function (feature) {
+				var maxspeed = feature.get('check_date') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / -0.8) + 1.0;
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed) / 5);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,255,255,0.4)',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/narrow.svg',
+							scale:0.13
+						}),
+							text: new ol.style.Text({
+								text: maxspeed,
+								offsetX : 10,
+								offsetY : 9,
+								rotation : 0.0,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						})
+					}));
+				}
+
+				return styles;
+			}
+},
+		{
+			group: 'Limits',
+			title: 'Túnel',
+			query: '(nwr["tunnel"="yes"][check_date]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/narrow.svg',
+			iconStyle: 'background-color:rgba(255,255,255,0.4)',
+			style: function (feature) {
+				var maxspeed = feature.get('check_date') || '';
+				if (maxspeed === ''){
+					return undefined;
+				}
+				var styles = [];
+
+				/* draw the segment line */ 
+				var width = (parseFloat(maxspeed) / -0.8) + 1.0;
+				var color = linearColorInterpolation([0, 0, 255], [0, 255, 255], Math.min(maxspeed) / 5);
+
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,255,255,0.4)',
+					width: width
+				});
+				styles.push(new ol.style.Style({
+					stroke: stroke
+				}));
+
+				// doesn't show speed sign in roundabout and similars
+				if (!feature.get('junction')) {
+					/* show the speed sign */ 
+					var coords = feature.getGeometry().getCoordinates();
+
+					styles.push(new ol.style.Style({
+						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.13)), // show the image in the middle of the segment
+						image: new ol.style.Icon({
+							src: imgSrc + 'icones/narrow.svg',
+							scale:0.13
+						}),
+							text: new ol.style.Text({
+								text: maxspeed,
+								offsetX : 10,
+								offsetY : 9,
+								rotation : 0.0,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						})
+					}));
+				}
+
+				return styles;
+			}
 		},
 		// Mobilitat
 		{
@@ -1049,7 +1151,81 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 				return style;
 			}
 
-		},
+  },
+		{
+			group: 'No limits',
+			title: 'No check_date on bridge',
+			query: '(way[bridge=yes][!"check_date"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/narrow.svg',
+			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(255,0,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(255,0,0,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
+		{
+			group: 'No limits',
+			title: 'No check_date on tunnel',
+			query: '(way[tunnel=yes][!"check_date"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/narrow.svg',
+			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(255,0,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(255,0,0,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
 		
 				// Left Ticket
 		{
