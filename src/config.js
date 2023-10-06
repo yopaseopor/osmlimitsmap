@@ -1620,7 +1620,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hazmat_designated.svg',
-							scale:0.6
+							scale:0.13
 						}),
 						text: new ol.style.Text({
 								text: maxspeed,
