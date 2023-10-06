@@ -896,7 +896,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 			group: 'No limits',
 			title: 'No hgv',
 			query: '(way[highway=motorway][!"hgv"]({{bbox}});node(w);way[highway=trunk][!"hgv"]({{bbox}});node(w);way[highway=primary][!"hgv"]({{bbox}});node(w);way[highway=secondary][!"hgv"]({{bbox}});node(w);way[highway=tertiary][!"hgv"]({{bbox}});node(w);way[highway=unclassified][!"hgv"]({{bbox}});node(w);way[highway=track][!"hgv"]({{bbox}});node(w);way[highway=living_street][!"hgv"]({{bbox}});node(w);way[highway=pedestrian][!"hgv"]({{bbox}});node(w);way[highway=residential][!"hgv"]({{bbox}});node(w);way[highway=service][!"hgv"]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/maxheight_question.svg',
+			iconSrc: imgSrc + 'icones/hgv_question.svg',
 			iconStyle: 'background-color:rgba(0,0,0,0.4)',
 			style: function (feature) {
 				var key_regex = /^name$/
@@ -1487,7 +1487,44 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 				return styles;
 			}
 
-},
+  },
+		{
+			group: 'HGV',
+			title: 'hgv=?',
+			query: '(way[highway=motorway][!"hgv"]({{bbox}});node(w);way[highway=trunk][!"hgv"]({{bbox}});node(w);way[highway=primary][!"hgv"]({{bbox}});node(w);way[highway=secondary][!"hgv"]({{bbox}});node(w);way[highway=tertiary][!"hgv"]({{bbox}});node(w);way[highway=unclassified][!"hgv"]({{bbox}});node(w);way[highway=track][!"hgv"]({{bbox}});node(w);way[highway=living_street][!"hgv"]({{bbox}});node(w);way[highway=pedestrian][!"hgv"]({{bbox}});node(w);way[highway=residential][!"hgv"]({{bbox}});node(w);way[highway=service][!"hgv"]({{bbox}});node(w););out meta;',
+			iconSrc: imgSrc + 'icones/hgv_question.svg',
+			iconStyle: 'background-color:rgba(0,0,0,0.4)',
+			style: function (feature) {
+				var key_regex = /^name$/
+				var name_key = feature.getKeys().filter(function(t){return t.match(key_regex)}).pop() || "name"
+				var name = feature.get(name_key) || '';
+				var fill = new ol.style.Fill({
+					color: 'rgba(0,0,0,0.4)'
+				});
+				var stroke = new ol.style.Stroke({
+					color: 'rgba(0,0,0,1)',
+					width: 1
+				});
+				var style = new ol.style.Style({
+					image: new ol.style.Circle({
+						fill: fill,
+						stroke: stroke,
+						radius: 5
+					}),
+							text: new ol.style.Text({
+								text: name,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
+						}),
+					fill: fill,
+					stroke: stroke
+				});
+				return style;
+			}
+  },
 		
 				// Left Ticket
 		{
