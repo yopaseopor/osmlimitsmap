@@ -1296,7 +1296,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hgv_designated.svg',
-							scale:0.3
+							scale:0.6
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1341,7 +1341,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hgv_yes.svg',
-							scale:0.3
+							scale:0.6
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1386,7 +1386,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hgv_delivery.svg',
-							scale:0.3
+							scale:0.6
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1431,7 +1431,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hgv_destination.svg',
-							scale:0.3
+							scale:0.6
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1476,7 +1476,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hgv_no.svg',
-							scale:0.3
+							scale:0.6
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1502,7 +1502,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 					color: 'rgba(0,0,0,0.4)'
 				});
 				var stroke = new ol.style.Stroke({
-					color: 'rgba(0,0,0,1)',
+					color: 'rgba(255,0,0,1)',
 					width: 1
 				});
 				var style = new ol.style.Style({
