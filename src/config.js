@@ -1267,7 +1267,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 			group: 'HGV',
 			title: 'hgv=designated',
 			query: '(way[hgv=designated]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/hgv_no.svg',
+			iconSrc: imgSrc + 'icones/hgv_designated.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('name') || '';
 				if (maxspeed === ''){
@@ -1295,8 +1295,8 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/hgv_no.svg',
-							scale:0.07
+							src: imgSrc + 'icones/hgv_designated.svg',
+							scale:0.3
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1312,7 +1312,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 			group: 'HGV',
 			title: 'hgv=yes',
 			query: '(way[hgv=yes]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/hgv_no.svg',
+			iconSrc: imgSrc + 'icones/hgv_yes.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('name') || '';
 				if (maxspeed === ''){
@@ -1340,8 +1340,8 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/hgv_no.svg',
-							scale:0.07
+							src: imgSrc + 'icones/hgv_yes.svg',
+							scale:0.3
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1357,7 +1357,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 			group: 'HGV',
 			title: 'hgv=delivery',
 			query: '(way[hgv=delivery]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/hgv_no.svg',
+			iconSrc: imgSrc + 'icones/hgv_delivery.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('name') || '';
 				if (maxspeed === ''){
@@ -1385,8 +1385,8 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/hgv_no.svg',
-							scale:0.07
+							src: imgSrc + 'icones/hgv_delivery.svg',
+							scale:0.3
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1402,7 +1402,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 			group: 'HGV',
 			title: 'hgv=destination',
 			query: '(way[hgv=destination]({{bbox}});node(w););out meta;',
-			iconSrc: imgSrc + 'icones/hgv_no.svg',
+			iconSrc: imgSrc + 'icones/hgv_destination.svg',
 			style: function (feature) {
 				var maxspeed = feature.get('name') || '';
 				if (maxspeed === ''){
@@ -1430,8 +1430,8 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 					styles.push(new ol.style.Style({
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
-							src: imgSrc + 'icones/hgv_no.svg',
-							scale:0.07
+							src: imgSrc + 'icones/hgv_destination.svg',
+							scale:0.3
 						}),
 						text: new ol.style.Text({
 							text: maxspeed
@@ -1476,7 +1476,7 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 						geometry: new ol.geom.Point(new ol.geom.LineString(coords).getCoordinateAt(0.11)), // show the image in the middle of the segment
 						image: new ol.style.Icon({
 							src: imgSrc + 'icones/hgv_no.svg',
-							scale:0.07
+							scale:0.3
 						}),
 						text: new ol.style.Text({
 							text: maxspeed

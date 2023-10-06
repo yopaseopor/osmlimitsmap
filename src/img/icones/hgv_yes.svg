@@ -6,7 +6,7 @@
    width="48.104"
    height="48.104"
    id="svg2"
-   sodipodi:docname="hgv_no.svg"
+   sodipodi:docname="hgv_yes.svg"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -33,7 +33,7 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="g3085" />
   <defs
      id="defs4" />
   <metadata
@@ -55,7 +55,7 @@
       <path
          d="m 45.379845,657.31893 c 0,-13.283 10.769,-24.052 24.052,-24.052 13.284,0 24.052,10.769 24.052,24.052 0,13.284 -10.768,24.052 -24.052,24.052 -13.283,0 -24.052,-10.768 -24.052,-24.052"
          id="path2827"
-         style="display:inline;fill:#e41408" />
+         style="display:inline;fill:#008000" />
       <path
          d="m 51.793845,657.31893 c 0,-9.742 7.897,-17.638 17.638,-17.638 9.741,0 17.638,7.896 17.638,17.638 0,9.74 -7.896,17.639 -17.638,17.639 -9.742,0 -17.638,-7.899 -17.638,-17.639"
          id="path2829"
