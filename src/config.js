@@ -1299,7 +1299,12 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 							scale:0.6
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+								text: maxspeed,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						})
 					}));
 				}
@@ -1344,7 +1349,12 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 							scale:0.6
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+								text: maxspeed,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						})
 					}));
 				}
@@ -1389,7 +1399,12 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 							scale:0.6
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+								text: maxspeed,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						})
 					}));
 				}
@@ -1434,7 +1449,12 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 							scale:0.6
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+								text: maxspeed,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						})
 					}));
 				}
@@ -1479,7 +1499,12 @@ query: '(way[highway=motorway][!"incline"]({{bbox}});node(w);way[highway=trunk][
 							scale:0.6
 						}),
 						text: new ol.style.Text({
-							text: maxspeed
+								text: maxspeed,
+								offsetX : 0,
+								offsetY : 20,
+								fill: new ol.style.Fill({
+                            color: 'rgba(0,0,0,1)'
+                        }),
 						})
 					}));
 				}
